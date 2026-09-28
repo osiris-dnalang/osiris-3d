@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/risk.schema.json",
+  "title": "OSIRISRisk",
+  "type": "object",
+  "required": [
+    "risk_id",
+    "title",
+    "category",
+    "owner",
+    "status",
+    "probability",
+    "impact",
+    "mitigation",
+    "trigger",
+    "evidence"
+  ],
+  "properties": {
+    "risk_id": {
+      "type": "string",
+      "pattern": "^RISK-[A-Z]+-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["OPERATIONAL", "SCIENTIFIC", "REPRODUCIBILITY", "RESOURCE", "GOVERNANCE", "RELEASE"]
+    },
+    "owner": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["OPEN", "MITIGATED", "ACCEPTED", "CLOSED"]
+    },
+    "probability": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "OBSERVED"]
+    },
+    "impact": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    },
+    "mitigation": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+{
+  "invariant": "CROSS_PLANE_NON_SUBSTITUTION",
+  "rules": {
+    "scientific_substitutes_for_operational": false,
+    "operational_substitutes_for_scientific": false,
+    "provenance_substitutes_for_scientific": false,
+    "provenance_substitutes_for_operational": false
+  },
+  "formal_statements": [
+    "SCIENCE ⊬ DEPLOYMENT",
+    "DEPLOYMENT ⊬ SCIENCE",
+    "PROVENANCE ⊬ DEPLOYMENT",
+    "PROVENANCE ⊬ SCIENCE"
+  ],
+  "audit_declaration": "No evidence element from SEP-QF-2026-001 may be used to alter, bypass, or promote S_deployed = FALSE. No evidence element from OEP-REAL-CAMPAIGN-20260926T160434Z may be used to evaluate quantum hypotheses."
+}

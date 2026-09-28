@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/deliverable.schema.json",
+  "title": "OSIRISDeliverable",
+  "type": "object",
+  "required": [
+    "deliverable_id",
+    "title",
+    "description",
+    "work_package",
+    "milestone",
+    "path",
+    "format",
+    "status",
+    "evidence_refs"
+  ],
+  "properties": {
+    "deliverable_id": {
+      "type": "string",
+      "pattern": "^DEL-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "work_package": {
+      "type": "string"
+    },
+    "milestone": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["NOT_STARTED", "IN_PROGRESS", "BLOCKED", "READY", "PUBLISHED"]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "doi": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,46 @@
+{
+  "package_id": "SEP-QF-2026-001",
+  "evidence_plane": "SCIENTIFIC",
+  "claims": [
+    {
+      "claim_id": "QF-001",
+      "title": "Quantum Negentropy Scaling via DNA-Lang Circuit Synthesis",
+      "status": "HYPOTHESIS",
+      "basis": "Mathematical model of coherent state folding across biological grammar",
+      "evaluation_domain": "THEORETICAL",
+      "substitutes_deployment": false
+    },
+    {
+      "claim_id": "QF-002",
+      "title": "Classical Statevector Emulation of Byte-Angle Encodings",
+      "status": "SIMULATION_RESULT",
+      "basis": "Exact 8-qubit simulation using Aer simulator backend",
+      "evaluation_domain": "SIMULATED",
+      "substitutes_deployment": false
+    },
+    {
+      "claim_id": "QF-003",
+      "title": "Deterministic Canonical Request Invariance",
+      "status": "MEASURED",
+      "basis": "Byte-for-byte RFC canonical JSON reproduction across 14 vectors",
+      "evaluation_domain": "EMPIRICAL_LOCAL",
+      "substitutes_deployment": false
+    },
+    {
+      "claim_id": "QF-004",
+      "title": "Pre-Adapter Execution Invariant Enforcement",
+      "status": "REPRODUCED",
+      "basis": "13-point mechanical security invariants validated across 63 test runs",
+      "evaluation_domain": "EMPIRICAL_LOCAL",
+      "substitutes_deployment": false
+    },
+    {
+      "claim_id": "QF-005",
+      "title": "Hardware Survival against Calibration Drift on IBM Heron",
+      "status": "PROSPECTIVE_QPU_TEST",
+      "basis": "Pre-registered 3-month BlueQubit Track 2 adversarial trial",
+      "evaluation_domain": "CONTINGENT_HARDWARE",
+      "substitutes_deployment": false
+    }
+  ]
+}

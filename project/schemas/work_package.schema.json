@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/work_package.schema.json",
+  "title": "OSIRISWorkPackage",
+  "type": "object",
+  "required": [
+    "work_package_id",
+    "title",
+    "description",
+    "lead_objective",
+    "tasks",
+    "exit_condition",
+    "status",
+    "deliverables"
+  ],
+  "properties": {
+    "work_package_id": {
+      "type": "string",
+      "pattern": "^WP-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "lead_objective": {
+      "type": "string"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["task_id", "title", "description", "status"],
+        "properties": {
+          "task_id": { "type": "string", "pattern": "^TASK-[0-9]{3}$" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["NOT_STARTED", "READY", "IN_PROGRESS", "BLOCKED", "DONE", "CANCELLED"]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "exit_condition": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["NOT_STARTED", "READY", "IN_PROGRESS", "BLOCKED", "DONE", "CANCELLED"]
+    },
+    "deliverables": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

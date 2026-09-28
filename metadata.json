@@ -1,0 +1,8 @@
+{
+  "name": "Osiris Governance",
+  "description": "Deterministic capability governor, canonical hash binding, non-substitution dynamic evidence ledger, and release authority control plane.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

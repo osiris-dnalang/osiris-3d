@@ -1,0 +1,13 @@
+{
+  "status": "SUCCESS",
+  "proposal_sha256": "sha256:d82998a4ff8217bbba903c72b25b2a041f05786c234a654c60bc0ae5d3cb86c2",
+  "fixture_id": "echo-v1",
+  "nonce": "nonce-example-001",
+  "evidence_event_id": "evt-000004",
+  "payload": {
+    "status": "SUCCESS",
+    "message": "hello"
+  },
+  "release_id": "OSIRIS-LIVLM-BETA-0.1.0-REF",
+  "epistemic_status": "REPRODUCED_OFFLINE"
+}

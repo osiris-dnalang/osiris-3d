@@ -1,0 +1,54 @@
+[
+  {
+    "dependency_id": "DEP-001",
+    "title": "BlueQubit Track 2 Grant Award and API Allocation",
+    "category": "EXTERNAL_GRANT",
+    "description": "Formal selection and execution of BlueQubit Quantum Flywheel Track 2 research agreement providing cloud credits and platform access.",
+    "status": "PROSPECTIVE",
+    "criticality": "HIGH",
+    "affected_objects": [
+      "WP-004",
+      "GATE-003",
+      "MS-004"
+    ]
+  },
+  {
+    "dependency_id": "DEP-002",
+    "title": "IBM Quantum Heron 156-Qubit Hardware Access",
+    "category": "HARDWARE_ACCESS",
+    "description": "Physical QPU access to IBM Heron backend via BlueQubit integration for executing pre-registered benchmark circuits.",
+    "status": "BLOCKED",
+    "criticality": "HIGH",
+    "affected_objects": [
+      "WP-004",
+      "OBJ-002",
+      "TASK-032"
+    ]
+  },
+  {
+    "dependency_id": "DEP-003",
+    "title": "Hardened Linux Confinement Environment",
+    "category": "INFRASTRUCTURE",
+    "description": "Secure container host with enforced seccomp-bpf syscall filtering (mode 2), network namespace isolation, and read-only rootfs for remediated operational deployment campaign.",
+    "status": "OPEN",
+    "criticality": "CRITICAL",
+    "affected_objects": [
+      "WP-003",
+      "TASK-021",
+      "RISK-OPS-001"
+    ]
+  },
+  {
+    "dependency_id": "DEP-004",
+    "title": "Classical Scientific Computing Ecosystem",
+    "category": "SOFTWARE_DEPENDENCY",
+    "description": "Pinned versions of Python 3.11+, Qiskit 1.0+, Qiskit Aer, NumPy, SciPy, and tensor-network simulation tooling.",
+    "status": "SATISFIED",
+    "criticality": "MEDIUM",
+    "affected_objects": [
+      "WP-001",
+      "WP-002",
+      "CRIT-FEA-001"
+    ]
+  }
+]

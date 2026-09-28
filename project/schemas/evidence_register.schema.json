@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/evidence_register.schema.json",
+  "title": "OSIRISEvidenceRegisterEntry",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "evidence_plane",
+    "type",
+    "status",
+    "path",
+    "root_hash",
+    "artifact_digest",
+    "source_commit",
+    "supports",
+    "does_not_establish"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "evidence_plane": {
+      "type": "string",
+      "enum": ["OPERATIONAL", "SCIENTIFIC", "PROVENANCE"]
+    },
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DECLARED",
+        "OBSERVED",
+        "VERIFIED",
+        "UNVERIFIED",
+        "BLOCKED",
+        "FALSE",
+        "ATTESTED",
+        "AUTHORIZED",
+        "REVOKED",
+        "EXPIRED"
+      ]
+    },
+    "path": {
+      "type": "string"
+    },
+    "root_hash": {
+      "type": "string"
+    },
+    "artifact_digest": {
+      "type": "string"
+    },
+    "source_commit": {
+      "type": "string"
+    },
+    "supports": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

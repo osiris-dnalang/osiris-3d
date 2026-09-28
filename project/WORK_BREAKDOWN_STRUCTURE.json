@@ -1,0 +1,292 @@
+[
+  {
+    "work_package_id": "WP-001",
+    "title": "Scientific Claim & Benchmark Freeze",
+    "description": "Establish immutable definitions for candidate quantum circuits, performance claims, adversarial refutation thresholds, and preregistered experimental protocols.",
+    "lead_objective": "OBJ-001",
+    "tasks": [
+      {
+        "task_id": "TASK-001",
+        "title": "Claim Inventory",
+        "description": "Formulate candidate quantum advantage claims QF-001 through QF-005 in independent epistemic states.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-SCI-001"]
+      },
+      {
+        "task_id": "TASK-002",
+        "title": "Benchmark Selection",
+        "description": "Select DNA-Lang parameterized quantum circuit families and define depth/qubit configurations.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-SCI-001"]
+      },
+      {
+        "task_id": "TASK-003",
+        "title": "Metric Definition",
+        "description": "Specify cross-entropy benchmarking (XEB) and coherent negentropy metric Xi with coverage constraints.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-SCI-001"]
+      },
+      {
+        "task_id": "TASK-004",
+        "title": "Refutation Criteria",
+        "description": "Establish formal refutation conditions: classical reproduction under budget, or sample coverage C < 0.1.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-SCI-001"]
+      },
+      {
+        "task_id": "TASK-005",
+        "title": "Protocol Freeze",
+        "description": "Publish immutable protocol manifest with pre-registered sha256 digests in SEP package.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-SCI-001"]
+      }
+    ],
+    "exit_condition": "CLAIM + PROTOCOL + ACCEPTANCE CRITERIA IMMUTABLY IDENTIFIED",
+    "status": "DONE",
+    "deliverables": ["DEL-005"]
+  },
+  {
+    "work_package_id": "WP-002",
+    "title": "Classical Attack Ladder",
+    "description": "Implement and execute the 4-level adversarial classical simulation ladder to establish the classical boundary.",
+    "lead_objective": "OBJ-001",
+    "tasks": [
+      {
+        "task_id": "TASK-010",
+        "title": "Exact Reference Baseline",
+        "description": "Simulate exact statevector ground truth for small instances (M <= 24 qubits) via Qiskit Aer.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-SCI-001"]
+      },
+      {
+        "task_id": "TASK-011",
+        "title": "Tensor-Network Sweep",
+        "description": "Execute Matrix Product State (MPS) simulations sweeping bond dimension chi in [16, 256].",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-012",
+        "title": "Pauli-Path Campaign",
+        "description": "Execute Pauli-path / Clifford+T hybrid expansion attacks targeting peaked circuit observables.",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-013",
+        "title": "Heuristic Campaign",
+        "description": "Run evolutionary and heuristic classical optimization searches guided by LivLM agent.",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-014",
+        "title": "Resource Scaling Analysis",
+        "description": "Measure runtime and memory consumption across classical attack families as problem size scales.",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-015",
+        "title": "Adversarial Comparison",
+        "description": "Evaluate candidate circuit fidelity against best classical attack; record boundary.",
+        "status": "READY",
+        "evidence_refs": []
+      }
+    ],
+    "exit_condition": "CLASSICAL BOUNDARY ESTABLISHED",
+    "status": "READY",
+    "deliverables": ["DEL-005"]
+  },
+  {
+    "work_package_id": "WP-003",
+    "title": "Operational Evidence & Execution Governance",
+    "description": "Enforce runtime security, OSIRIS pre-adapter boundaries, cryptographic receipts, and cross-plane non-substitution.",
+    "lead_objective": "OBJ-005",
+    "tasks": [
+      {
+        "task_id": "TASK-020",
+        "title": "Artifact Identity Pinning",
+        "description": "Enforce strict SHA-256 content hashing for all source artifacts; reject mutable references.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-REF-001", "EVD-XPL-001"]
+      },
+      {
+        "task_id": "TASK-021",
+        "title": "Runtime Identity & Probing",
+        "description": "Execute operational confinement probes (seccomp, egress, filesystem writes).",
+        "status": "DONE",
+        "evidence_refs": ["EVD-OPS-001"]
+      },
+      {
+        "task_id": "TASK-022",
+        "title": "Execution Receipts Capture",
+        "description": "Generate machine-readable RuntimeProbeReceipts for all operational assertions.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-OPS-001"]
+      },
+      {
+        "task_id": "TASK-023",
+        "title": "Resource Receipts Logging",
+        "description": "Construct machine-readable resource accounting ledger for compute and memory consumption.",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-024",
+        "title": "Operational Evidence Validation",
+        "description": "Adjudicate S_deployed; record adverse-first failure if confinement violated.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-OPS-001"]
+      }
+    ],
+    "exit_condition": "OPERATIONAL EVIDENCE COMPLETE FOR DECLARED EXECUTION",
+    "status": "DONE",
+    "deliverables": ["DEL-002", "DEL-003"]
+  },
+  {
+    "work_package_id": "WP-004",
+    "title": "Quantum Hardware Confrontation",
+    "description": "Where justified by GATE-003, dispatch pre-registered circuits to physical QPUs (IBM Heron via BlueQubit API) and record raw telemetry.",
+    "lead_objective": "OBJ-002",
+    "tasks": [
+      {
+        "task_id": "TASK-030",
+        "title": "Hardware Eligibility Gate Audit",
+        "description": "Verify GATE-001 and GATE-002 pass before consuming any external QPU allocation.",
+        "status": "BLOCKED",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-031",
+        "title": "QPU Manifest Freeze",
+        "description": "Freeze exact transpiler seeds, shots, and circuit parameter vectors for physical submission.",
+        "status": "NOT_STARTED",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-032",
+        "title": "Hardware Execution",
+        "description": "Submit batch jobs to physical IBM Heron 156-qubit backend via BlueQubit API.",
+        "status": "NOT_STARTED",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-033",
+        "title": "Raw Data Capture",
+        "description": "Ingest complete unmitigated bitstring measurement counts and backend calibration hashes.",
+        "status": "NOT_STARTED",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-034",
+        "title": "Provider Receipt Capture",
+        "description": "Generate HardwareProviderReceipt binding provider job_id, calibration hash, and raw counts digest.",
+        "status": "NOT_STARTED",
+        "evidence_refs": []
+      }
+    ],
+    "exit_condition": "HARDWARE EXECUTION EVIDENCE COMPLETE",
+    "status": "BLOCKED",
+    "deliverables": ["DEL-006"]
+  },
+  {
+    "work_package_id": "WP-005",
+    "title": "Independent Reproduction & Adjudication",
+    "description": "Subject experimental outputs to clean-room rerun, alternative analysis pipelines, and adverse-first adjudication.",
+    "lead_objective": "OBJ-003",
+    "tasks": [
+      {
+        "task_id": "TASK-040",
+        "title": "Independent Reproduction",
+        "description": "Re-run analysis scripts from clean checkout on isolated environment without cached state.",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-041",
+        "title": "Alternate Analysis Pipeline",
+        "description": "Re-analyze raw bitstring counts with independent entropy estimators (Miller-Madow, Chao-Shen, NSB).",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-042",
+        "title": "Adversarial Re-Test",
+        "description": "Permit independent evaluator to inject additional classical attack parameters.",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-043",
+        "title": "Discrepancy Resolution",
+        "description": "Compare primary and reproduction outputs; record divergence if observed.",
+        "status": "READY",
+        "evidence_refs": []
+      },
+      {
+        "task_id": "TASK-044",
+        "title": "Final Adjudication",
+        "description": "Issue definitive claim disposition: SUPPORTED, REFUTED, or INCONCLUSIVE.",
+        "status": "READY",
+        "evidence_refs": []
+      }
+    ],
+    "exit_condition": "SUPPORTED / REFUTED / INCONCLUSIVE",
+    "status": "READY",
+    "deliverables": ["DEL-006"]
+  },
+  {
+    "work_package_id": "WP-006",
+    "title": "Open Release & Publication",
+    "description": "Publish complete reproducible code, manifests, research papers, and permanent DOI archival records.",
+    "lead_objective": "OBJ-004",
+    "tasks": [
+      {
+        "task_id": "TASK-050",
+        "title": "Repository Preparation",
+        "description": "Establish clean, version-controlled repository with automated governance test suite.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-REF-001"]
+      },
+      {
+        "task_id": "TASK-051",
+        "title": "Evidence Package Assembly",
+        "description": "Package OEP, SEP, and XPL evidence bundles with cryptographic manifests.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-OPS-001", "EVD-SCI-001", "EVD-XPL-001"]
+      },
+      {
+        "task_id": "TASK-052",
+        "title": "Reproducibility Package",
+        "description": "Provide clean-room execution instructions, test harness, and dependency lockfiles.",
+        "status": "DONE",
+        "evidence_refs": ["EVD-REF-001"]
+      },
+      {
+        "task_id": "TASK-053",
+        "title": "Paper / Preprint Generation",
+        "description": "Author research paper documenting architecture, estimator critique, and empirical findings.",
+        "status": "DONE",
+        "evidence_refs": ["DEL-004"]
+      },
+      {
+        "task_id": "TASK-054",
+        "title": "Permanent DOI Archival",
+        "description": "Archive release assets and proposal on Zenodo; mint persistent DOIs.",
+        "status": "DONE",
+        "evidence_refs": ["DEL-001"]
+      },
+      {
+        "task_id": "TASK-055",
+        "title": "Release Verification",
+        "description": "Tag release commit and verify public availability of assets and checksums.",
+        "status": "DONE",
+        "evidence_refs": ["DEL-001"]
+      }
+    ],
+    "exit_condition": "OPEN ARTIFACTS AND VERIFIABLE RELEASE PUBLISHED",
+    "status": "DONE",
+    "deliverables": ["DEL-001", "DEL-004"]
+  }
+]

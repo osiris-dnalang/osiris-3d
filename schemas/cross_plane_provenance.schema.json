@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CrossPlaneProvenanceRecord",
+  "description": "Schema for machine-readable cross-plane provenance records enforcing strict non-substitution between operational and scientific evidence planes.",
+  "type": "object",
+  "required": [
+    "record_id",
+    "provenance_only",
+    "operational_root",
+    "scientific_root",
+    "artifact_digest",
+    "relationship",
+    "substitution"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "evidence_plane": {
+      "type": "string",
+      "enum": ["PROVENANCE"]
+    },
+    "provenance_only": {
+      "type": "boolean",
+      "const": true
+    },
+    "operational_root": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "scientific_root": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "artifact_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "git_commit_sha": {
+      "type": "string"
+    },
+    "relationship": {
+      "type": "string",
+      "enum": [
+        "SAME_IMMUTABLE_ARTIFACT_LINEAGE",
+        "SCIENTIFIC_PACKAGE_REFERENCES_ARTIFACT"
+      ]
+    },
+    "substitution": {
+      "type": "object",
+      "required": [
+        "scientific_for_operational",
+        "operational_for_scientific"
+      ],
+      "properties": {
+        "scientific_for_operational": {
+          "type": "boolean",
+          "const": false
+        },
+        "operational_for_scientific": {
+          "type": "boolean",
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

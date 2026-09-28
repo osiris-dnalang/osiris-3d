@@ -1,0 +1,17 @@
+{
+  "reference_type": "OPERATIONAL_PACKAGE_REFERENCE",
+  "package_id": "OEP-REAL-CAMPAIGN-20260926T160434Z",
+  "evidence_plane": "OPERATIONAL",
+  "root_hash": "sha256:fcb966e6b010c282531a7bc8c962b1154c156f71b9543e09968940e79dc314da",
+  "adjudicated_verdict": {
+    "s_deployed": "FALSE",
+    "cloud_deployment_status": "BLOCKED",
+    "confirmatory_execution": "PROHIBITED"
+  },
+  "observed_violations": [
+    "Seccomp mode 0 (filter inactive)",
+    "Unauthorized network egress attempt detected",
+    "Unconfined /tmp write detected"
+  ],
+  "authority": "LOCAL_CONFINEMENT_PROBE_SUITE"
+}

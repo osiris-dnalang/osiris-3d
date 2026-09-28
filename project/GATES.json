@@ -1,0 +1,130 @@
+[
+  {
+    "gate_id": "GATE-001",
+    "name": "CLAIM_FREEZE",
+    "description": "Requires explicit formal specification of candidate claims, circuit grammar, error metrics, refutation criteria, and immutable cryptographic protocol digest in SEP package.",
+    "prerequisites": [],
+    "mandatory_terms": [
+      "CLAIMS_DEFINED",
+      "PROTOCOL_FROZEN",
+      "METRICS_SPECIFIED",
+      "REFUTATION_BOUNDS_SET",
+      "ARTIFACT_HASH_BOUND"
+    ],
+    "blocking_conditions": [
+      "UNBOUND_ARTIFACT",
+      "MUTABLE_REFERENCE",
+      "MISSING_REFUTATION_THRESHOLD"
+    ],
+    "status": "PASSED",
+    "evidence_refs": [
+      "EVD-SCI-001",
+      "EVD-XPL-001"
+    ],
+    "disposition_note": "Passed: SEP-QF-2026-001 frozen with 5 independent claims, 4-level attack ladder protocol, and coverage estimator requirements."
+  },
+  {
+    "gate_id": "GATE-002",
+    "name": "CLASSICAL_BOUNDARY",
+    "description": "Requires execution of the 4-level classical attack ladder (exact, MPS, Pauli-path, heuristic) with comprehensive resource measurements before QPU execution can be evaluated.",
+    "prerequisites": [
+      "GATE-001"
+    ],
+    "mandatory_terms": [
+      "EXACT_BASELINE_COMPUTED",
+      "TENSOR_NETWORK_SWEEP_EXECUTED",
+      "PAULI_PATH_BENCHMARK_EXECUTED",
+      "HEURISTIC_SEARCH_EXECUTED",
+      "RESOURCE_LEDGER_CAPTURED"
+    ],
+    "blocking_conditions": [
+      "GATE_001_FAILED",
+      "MISSING_RESOURCE_MEASUREMENT",
+      "UNBOUNDED_CLASSICAL_FAILURE"
+    ],
+    "status": "NOT_READY",
+    "evidence_refs": [
+      "EVD-SCI-001"
+    ],
+    "disposition_note": "Not Ready: Level 0 exact baseline simulated; Levels 1-3 classical attacks and full resource ledger pending execution."
+  },
+  {
+    "gate_id": "GATE-003",
+    "name": "QPU_ELIGIBILITY",
+    "description": "Strict gate controlling physical QPU execution: requires GATE-001 and GATE-002 passed, operational confinement validated, resource budget approved, and hardware provider allocation active.",
+    "prerequisites": [
+      "GATE-001",
+      "GATE-002"
+    ],
+    "mandatory_terms": [
+      "GATE_001_PASSED",
+      "GATE_002_PASSED",
+      "OPERATIONAL_CONFINEMENT_VALID",
+      "RESOURCE_BUDGET_APPROVED",
+      "HARDWARE_AUTHORIZATION_PRESENT"
+    ],
+    "blocking_conditions": [
+      "GATE_001_NOT_PASSED",
+      "GATE_002_NOT_PASSED",
+      "S_DEPLOYED_FALSE",
+      "MISSING_PROVIDER_AUTHORIZATION"
+    ],
+    "status": "BLOCKED",
+    "evidence_refs": [
+      "EVD-OPS-001"
+    ],
+    "disposition_note": "Blocked: GATE-002 is NOT_READY, S_deployed is FALSE (REAL-CAMPAIGN-20260926T160434Z), and BlueQubit external QPU allocation is prospective."
+  },
+  {
+    "gate_id": "GATE-004",
+    "name": "ADJUDICATION",
+    "description": "Requires raw bitstrings, independent execution reproduction, coverage-adjusted entropy validation, and adverse-first evaluation to produce definitive claim disposition.",
+    "prerequisites": [
+      "GATE-001",
+      "GATE-002"
+    ],
+    "mandatory_terms": [
+      "RAW_TELEMETRY_INGESTED",
+      "ANALYSIS_PIPELINE_COMPLETE",
+      "INDEPENDENT_REPRODUCTION_VERIFIED",
+      "ADVERSARIAL_RETEST_EXECUTED"
+    ],
+    "blocking_conditions": [
+      "CHERRY_PICKED_SAMPLE",
+      "PLUG_IN_ENTROPY_WHEN_COVERAGE_LOW",
+      "INCOMPLETE_REPRODUCTION"
+    ],
+    "status": "NOT_READY",
+    "evidence_refs": [],
+    "disposition_note": "Not Ready: Experimental data collection and independent reproduction pending."
+  },
+  {
+    "gate_id": "GATE-005",
+    "name": "PUBLIC_RELEASE",
+    "description": "Requires immutable source commit, verified test suite, frozen evidence packages, reproduction guide, explicit epistemic demarcation, and open publication.",
+    "prerequisites": [
+      "GATE-001"
+    ],
+    "mandatory_terms": [
+      "SOURCE_COMMIT_PINNED",
+      "EVIDENCE_PACKAGE_COMPLETE",
+      "REPRODUCTION_INSTRUCTIONS_VERIFIED",
+      "CROSS_PLANE_PROVENANCE_VALID",
+      "EXPLICIT_EPISTEMIC_DEMARCATION",
+      "OPERATIONAL_LIMITATIONS_DECLARED"
+    ],
+    "blocking_conditions": [
+      "MUTABLE_REFERENCE",
+      "CLAIM_LAUNDERING",
+      "UNSTATED_OPERATIONAL_FAILURE"
+    ],
+    "status": "PASSED",
+    "evidence_refs": [
+      "EVD-REF-001",
+      "EVD-OPS-001",
+      "EVD-SCI-001",
+      "EVD-XPL-001"
+    ],
+    "disposition_note": "Passed for v0.1.0-beta.1 REFERENCE IMPLEMENTATION (NOT DEPLOYMENT-ATTESTED). S_deployed=FALSE honestly published; LocalReferenceReleaseAllowed=TRUE; CloudDeploymentAllowed=FALSE (BLOCKED)."
+  }
+]

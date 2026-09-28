@@ -1,0 +1,88 @@
+[
+  {
+    "deliverable_id": "DEL-001",
+    "title": "OSIRIS LivLM Beta v0.1.0-beta.1 Reference Implementation",
+    "description": "Complete source archive, test harness, REST microservice, canonical JSON serializer, and governance control plane release.",
+    "work_package": "WP-006",
+    "milestone": "MS-006",
+    "path": "RELEASE_MANIFEST.json",
+    "format": "TAR_GZ_AND_DOCS",
+    "status": "PUBLISHED",
+    "evidence_refs": [
+      "EVD-REF-001",
+      "EVD-OPS-001",
+      "EVD-SCI-001",
+      "EVD-XPL-001"
+    ],
+    "doi": "10.5281/zenodo.22980258"
+  },
+  {
+    "deliverable_id": "DEL-002",
+    "title": "Frozen Operational Confinement Failure Record",
+    "description": "Immutable historical operational evidence package documenting real probe confinement failure (S_deployed = FALSE) without data laundering.",
+    "work_package": "WP-003",
+    "milestone": "MS-003",
+    "path": "evidence/operational/REAL-CAMPAIGN-20260926T160434Z/MANIFEST.json",
+    "format": "JSON_EVIDENCE_PACKAGE",
+    "status": "PUBLISHED",
+    "evidence_refs": [
+      "EVD-OPS-001"
+    ],
+    "doi": "10.5281/zenodo.22980258"
+  },
+  {
+    "deliverable_id": "DEL-003",
+    "title": "Cross-Plane Provenance Package & Specification",
+    "description": "Normative specification and cryptographic binding linking operational, scientific, and provenance planes under strict non-substitution invariants.",
+    "work_package": "WP-003",
+    "milestone": "MS-003",
+    "path": "evidence/provenance/XPL-2026-09-26-001/MANIFEST.json",
+    "format": "JSON_AND_MARKDOWN",
+    "status": "PUBLISHED",
+    "evidence_refs": [
+      "EVD-XPL-001"
+    ],
+    "doi": "10.5281/zenodo.22980258"
+  },
+  {
+    "deliverable_id": "DEL-004",
+    "title": "Next-Gen Quantum LivLM Research Paper Preprint",
+    "description": "Comprehensive 9-section scientific paper covering governed living language models, DNA-Lang grammar, closed-loop flywheel, and estimator critique.",
+    "work_package": "WP-006",
+    "milestone": "MS-006",
+    "path": "grant/NEXT_GEN_QUANTUM_LIVLM_PAPER.md",
+    "format": "MARKDOWN_PREPRINT",
+    "status": "PUBLISHED",
+    "evidence_refs": [
+      "EVD-REF-001",
+      "EVD-XPL-001"
+    ],
+    "doi": "10.5281/zenodo.22980258"
+  },
+  {
+    "deliverable_id": "DEL-005",
+    "title": "Adversarial Benchmark & Classical Attack Suite",
+    "description": "Formal protocol, claim catalog QF-001 through QF-005, and 4-level adversarial attack specifications.",
+    "work_package": "WP-001",
+    "milestone": "MS-001",
+    "path": "evidence/scientific/SEP-QF-2026-001/MANIFEST.json",
+    "format": "JSON_EVIDENCE_PACKAGE",
+    "status": "READY",
+    "evidence_refs": [
+      "EVD-SCI-001"
+    ],
+    "doi": "10.5281/zenodo.22863245"
+  },
+  {
+    "deliverable_id": "DEL-006",
+    "title": "Final Scientific Adjudication Report",
+    "description": "Independent evaluation of experimental and classical simulation outputs with definitive claim dispositions.",
+    "work_package": "WP-005",
+    "milestone": "MS-005",
+    "path": "project/reports/FINAL_ADJUDICATION.md",
+    "format": "MARKDOWN_REPORT",
+    "status": "NOT_STARTED",
+    "evidence_refs": [],
+    "doi": ""
+  }
+]

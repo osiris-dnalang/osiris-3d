@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Osiris Governance</string>
+    <string name="app_subtitle">Authority Control Plane &amp; Epistemic Ledger</string>
+    <string name="nav_dashboard">Console</string>
+    <string name="nav_ledger">Ledger</string>
+    <string name="nav_evaluator">Evaluator</string>
+    <string name="nav_confinement">Confinement</string>
+    <string name="nav_inspector">Canonical</string>
+</resources>

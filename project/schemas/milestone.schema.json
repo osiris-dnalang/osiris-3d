@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/milestone.schema.json",
+  "title": "OSIRISMilestone",
+  "type": "object",
+  "required": [
+    "milestone_id",
+    "title",
+    "description",
+    "target_month",
+    "work_packages",
+    "exit_criteria",
+    "required_evidence",
+    "status"
+  ],
+  "properties": {
+    "milestone_id": {
+      "type": "string",
+      "pattern": "^MS-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "target_month": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "work_packages": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "exit_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "required_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["NOT_STARTED", "IN_PROGRESS", "BLOCKED", "ACHIEVED"]
+    }
+  },
+  "additionalProperties": false
+}

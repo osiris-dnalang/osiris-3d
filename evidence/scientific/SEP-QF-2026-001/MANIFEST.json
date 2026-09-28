@@ -1,0 +1,14 @@
+{
+  "package_id": "SEP-QF-2026-001",
+  "evidence_plane": "SCIENTIFIC",
+  "title": "Quantum Flywheel 2026 Pre-Registered Scientific Baseline",
+  "grant_program": "BlueQubit Quantum Flywheel Open Call 2026",
+  "proposal_doi": "10.5281/zenodo.22863245",
+  "software_release_doi": "10.5281/zenodo.22980008",
+  "target_artifact_digest": "sha256:8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+  "git_commit_sha": "8df61dc",
+  "epistemic_policy": "INDEPENDENT_SCIENTIFIC_EVALUATION",
+  "non_substitution_clause": "Scientific package references artifact; does NOT inherit operational S_deployed",
+  "root_hash": "sha256:3a4b9187c29302bf1e89df9012cd4a38721e901842bc0189a87d6e42b1029e01",
+  "frozen": true
+}

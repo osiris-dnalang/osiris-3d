@@ -1,0 +1,9 @@
+{
+  "reference_type": "SHARED_ARTIFACT_IDENTITY",
+  "repository": "https://github.com/osiris-dnalang/osiris-governance",
+  "git_commit_sha": "8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+  "release_tag": "v0.1.0-beta.1",
+  "tarball_sha256": "2853cf1f8c5556c66689f86a390686b72d23253b2181467bece2674e74e44421",
+  "artifact_digest": "sha256:8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+  "immutability_verified": true
+}

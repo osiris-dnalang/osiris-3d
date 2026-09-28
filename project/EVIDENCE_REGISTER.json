@@ -1,0 +1,81 @@
+[
+  {
+    "evidence_id": "EVD-OPS-001",
+    "evidence_plane": "OPERATIONAL",
+    "type": "CONFINEMENT_PROBE_CAMPAIGN",
+    "status": "FALSE",
+    "path": "evidence/operational/REAL-CAMPAIGN-20260926T160434Z/MANIFEST.json",
+    "root_hash": "sha256:fcb966e6b010c282531a7bc8c962b1154c156f71b9543e09968940e79dc314da",
+    "artifact_digest": "sha256:8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+    "source_commit": "8df61dc",
+    "supports": [
+      "S_DEPLOYED_EVALUATION",
+      "CONFINEMENT_VIOLATION_DETECTION",
+      "GATE_BLOCKED_DECISION"
+    ],
+    "does_not_establish": [
+      "scientific_validity",
+      "quantum_advantage",
+      "deployment_authorization",
+      "cloud_run_attestation"
+    ]
+  },
+  {
+    "evidence_id": "EVD-SCI-001",
+    "evidence_plane": "SCIENTIFIC",
+    "type": "SCIENTIFIC_EVIDENCE_PACKAGE",
+    "status": "VERIFIED",
+    "path": "evidence/scientific/SEP-QF-2026-001/MANIFEST.json",
+    "root_hash": "sha256:3a4b9187c29302bf1e89df9012cd4a38721e901842bc0189a87d6e42b1029e01",
+    "artifact_digest": "sha256:8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+    "source_commit": "8df61dc",
+    "supports": [
+      "BENCHMARK_SPECIFICATION",
+      "PREREGISTERED_ATTACK_PROTOCOL",
+      "STATEVECTOR_SIMULATION_BASELINE"
+    ],
+    "does_not_establish": [
+      "physical_quantum_advantage",
+      "deployment_authorization",
+      "hardware_execution_without_receipts"
+    ]
+  },
+  {
+    "evidence_id": "EVD-XPL-001",
+    "evidence_plane": "PROVENANCE",
+    "type": "CROSS_PLANE_PROVENANCE_RECORD",
+    "status": "VERIFIED",
+    "path": "evidence/provenance/XPL-2026-09-26-001/MANIFEST.json",
+    "root_hash": "sha256:49b3d3e0f450bd74e5f12bae2b3996342c9538d75bc3ae7ee2bf2afc8bf4ff5f",
+    "artifact_digest": "sha256:8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+    "source_commit": "8df61dc",
+    "supports": [
+      "SHARED_ARTIFACT_IDENTITY_BINDING",
+      "CROSS_PLANE_NON_SUBSTITUTION_ENFORCEMENT"
+    ],
+    "does_not_establish": [
+      "scientific_claim_validity",
+      "operational_deployment_authorization"
+    ]
+  },
+  {
+    "evidence_id": "EVD-REF-001",
+    "evidence_plane": "OPERATIONAL",
+    "type": "LOCAL_TEST_HARNESS_RECEIPT",
+    "status": "VERIFIED",
+    "path": "BETA_TEST_REPORT.md",
+    "root_hash": "sha256:01e85f4fa6e3dca11c039534eecc3dfa5fc76483163351d3824bbba38562c5e5",
+    "artifact_digest": "sha256:8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+    "source_commit": "ba09973",
+    "supports": [
+      "LOCAL_REFERENCE_RELEASE_ALLOWED",
+      "CANONICAL_SERIALIZATION_COMPLIANCE",
+      "PRE_ADAPTER_BOUNDARY_VERIFICATION"
+    ],
+    "does_not_establish": [
+      "cloud_deployment_authorization",
+      "hardware_execution",
+      "quantum_advantage"
+    ]
+  }
+]

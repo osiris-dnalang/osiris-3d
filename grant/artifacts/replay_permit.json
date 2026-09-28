@@ -1,0 +1,12 @@
+{
+  "canonicalization_version": "OSIRIS-CANONICAL-JSON-V1",
+  "expires_at_utc": "2026-09-26T13:00:00Z",
+  "fixture_id": "echo-v1",
+  "issued_at_utc": "2026-09-26T12:00:01Z",
+  "issuer": "local-replay-governor",
+  "nonce": "nonce-example-001",
+  "policy_version": "osiris-governance/v0.1-replay",
+  "process_epoch_id": "livlm-beta-epoch-1",
+  "proposal_sha256": "sha256:d82998a4ff8217bbba903c72b25b2a041f05786c234a654c60bc0ae5d3cb86c2",
+  "scope": "REPLAY_ONLY_NON_CRYPTOGRAPHIC"
+}

@@ -1,0 +1,68 @@
+{
+  "release_id": "OSIRIS-LIVLM-BETA-0.1.0-REF",
+  "version": "0.1.0-beta.1",
+  "tag": "v0.1.0-beta.1",
+  "git_commit": "8b3f047",
+  "release_timestamp_utc": "2026-09-26T16:15:00Z",
+  "release_designation": "v0.1.0-beta.1 REFERENCE IMPLEMENTATION (NOT DEPLOYMENT-ATTESTED)",
+  "release_disposition": "RELEASE_READY_WITH_EXPLICIT_LIMITATIONS",
+  "local_reference_release_allowed": true,
+  "cloud_deployment_allowed": false,
+  "zenodo_doi": "10.5281/zenodo.22980008",
+  "grant_proposal_doi": "10.5281/zenodo.22863245",
+  "target_mission": {
+    "grant_presentation": "BlueQubit Quantum Flywheel Open Call 2026 (Track 2: Breaking Quantum Advantage Claims)",
+    "cloud_deployment": "Google Cloud Run / Cloud Build (BLOCKED)",
+    "service_name": "livlm-service",
+    "audience": "External Beta Users, Evaluators, and Grant Reviewers"
+  },
+  "master_status_summary": {
+    "reference_implementation": {
+      "status": "READY_WITH_EXPLICIT_LIMITATIONS",
+      "tests_passed": 65,
+      "tests_failed": 0,
+      "local_reference_release_allowed": true
+    },
+    "operational_evidence": {
+      "campaign_id": "REAL-CAMPAIGN-20260926T160434Z",
+      "s_deployed": "FALSE",
+      "root_hash": "sha256:fcb966e6b010c282531a7bc8c962b1154c156f71b9543e09968940e79dc314da",
+      "observed_violations": [
+        "Seccomp mode 0 (filter inactive)",
+        "Unauthorized network egress attempt",
+        "Unconfined /tmp writes"
+      ],
+      "cloud_deployment_status": "BLOCKED",
+      "confirmatory_execution": "PROHIBITED"
+    },
+    "scientific_evidence": {
+      "package_id": "SEP-QF-2026-001",
+      "quantum_advantage": "NOT_ESTABLISHED",
+      "hardware_execution": "NOT_ESTABLISHED",
+      "prospective_qpu_work": "CONTINGENT_ON_GRANT_AWARD"
+    },
+    "cross_plane_provenance": {
+      "record_id": "XPL-2026-09-26-001",
+      "status": "LINKED_BY_IMMUTABLE_IDENTITY",
+      "substitution_permitted": false
+    }
+  },
+  "governance_invariants_enforced": [
+    "CROSS_PLANE_NON_SUBSTITUTION_INVARIANT",
+    "ADVERSE_FIRST_PRECEDENCE",
+    "EXPLICIT_FOUR_COORDINATE_SCOPE_BINDING",
+    "APPEND_ONLY_CRYPTOGRAPHIC_HASH_CHAIN",
+    "MUTABLE_REFERENCE_REJECTION",
+    "DUPLICATE_EVENT_ID_REJECTION",
+    "POLICY_REVISION_PINNING",
+    "TRANSITIVE_CLAIM_LAUNDERING_PROHIBITED",
+    "PARTIAL_SCOPE_PROMOTION_REJECTED"
+  ],
+  "verification_summary": {
+    "total_tests": 65,
+    "passed": 65,
+    "failed": 0,
+    "execution_time_seconds": 0.16,
+    "test_runner": "pytest-9.0.2 / Python 3.12.3"
+  }
+}

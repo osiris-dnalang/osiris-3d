@@ -1,0 +1,125 @@
+[
+  {
+    "criterion_id": "CRIT-NOV-001",
+    "name": "NOVELTY",
+    "description": "Evidence-governed adversarial verification rather than another single simulator or unsupported quantum advantage claim; plane-separated provenance linking operational and scientific claims without evidence substitution.",
+    "acceptance_criteria": [
+      "≥3 materially different classical attack families specified",
+      "≥1 new governance/provenance mechanism (Cross-Plane Non-Substitution Invariant)",
+      "≥1 nontrivial benchmark or analysis contribution (finite-sample coverage estimator critique)"
+    ],
+    "minimum_evidence": [
+      "NOVELTY_MAP",
+      "PRIOR_ART_REFERENCES",
+      "NOVELTY_DEMONSTRATION"
+    ],
+    "verification_method": [
+      "Prior art comparison against standalone simulators",
+      "Cryptographic verification of cross-plane non-substitution schema"
+    ],
+    "status": "PARTIAL",
+    "evidence_refs": [
+      "EVD-XPL-001",
+      "DEL-004"
+    ]
+  },
+  {
+    "criterion_id": "CRIT-FEA-001",
+    "name": "FEASIBILITY",
+    "description": "Demonstration that OSIRIS/LivLM infrastructure can execute the declared intent-to-evidence pipeline end-to-end prior to any scarce physical QPU consumption.",
+    "acceptance_criteria": [
+      "100% of local governance test suite passes cleanly (65/65 PASS)",
+      "Zero adapter execution without cryptographic permit",
+      "Pre-QPU dry-run completed on Aer statevector reference"
+    ],
+    "minimum_evidence": [
+      "PILOT_PROTOCOL",
+      "PILOT_EXECUTION_RECEIPT",
+      "PILOT_RESULT"
+    ],
+    "verification_method": [
+      "Automated pytest test suite execution",
+      "Execution gate mode and least privilege audit"
+    ],
+    "status": "PARTIAL",
+    "evidence_refs": [
+      "EVD-REF-001"
+    ]
+  },
+  {
+    "criterion_id": "CRIT-VAL-001",
+    "name": "VALIDATION_RIGOR",
+    "description": "Claims are subjected to adversarial rather than confirmatory testing across frozen protocols, independent classical simulation methods, preregistered metrics, and adverse-first adjudication.",
+    "acceptance_criteria": [
+      "≥3 classical attack families evaluated against candidate quantum circuit",
+      "Mandatory coverage-adjusted entropy estimators applied when sample coverage C < 0.1",
+      "Explicit SUPPORTED / REFUTED / INCONCLUSIVE disposition per claim"
+    ],
+    "minimum_evidence": [
+      "CLAIMS",
+      "FROZEN_PROTOCOL",
+      "EXACT_BASELINE",
+      "TENSOR_NETWORK_ATTACK",
+      "PAULI_PATH_ATTACK",
+      "HEURISTIC_ATTACK",
+      "ANALYSIS",
+      "ADJUDICATION"
+    ],
+    "verification_method": [
+      "Adversarial ladder execution and error metric boundary audit",
+      "Coverage-adjusted variance test refuting plug-in entropy"
+    ],
+    "status": "INCOMPLETE",
+    "evidence_refs": [
+      "EVD-SCI-001"
+    ]
+  },
+  {
+    "criterion_id": "CRIT-RES-001",
+    "name": "RESOURCE_USE",
+    "description": "Transparent accounting of classical CPU/GPU compute, memory, and QPU shots; classical methods evaluated against explicit resource envelopes rather than unconstrained failure.",
+    "acceptance_criteria": [
+      "≥80% of exploratory screening performed classically",
+      "Machine-readable resource ledger recording cpu_hours, gpu_hours, peak_memory, and shots",
+      "QPU campaigns strictly gated on pre-registered circuit manifests"
+    ],
+    "minimum_evidence": [
+      "RESOURCE_LEDGER",
+      "RESOURCE_SCALING_ANALYSIS",
+      "QPU_RECEIPTS_WHERE_APPLICABLE"
+    ],
+    "verification_method": [
+      "Inspection of execution receipts and resource logs",
+      "Empirical runtime and memory scaling curves vs problem size"
+    ],
+    "status": "INCOMPLETE",
+    "evidence_refs": []
+  },
+  {
+    "criterion_id": "CRIT-REP-001",
+    "name": "REPRODUCIBILITY",
+    "description": "Every published claim is reconstructable from immutable artifacts: commit, artifact digest, environment, raw data, analysis code, and cross-plane lineage.",
+    "acceptance_criteria": [
+      "100% of claims bound to immutable content SHA-256 digests",
+      "Independent clean-room reproduction instructions tested",
+      "Zero cross-plane claim substitution permitted"
+    ],
+    "minimum_evidence": [
+      "ARTIFACT_MANIFEST",
+      "ENVIRONMENT_MANIFEST",
+      "DATA_MANIFEST",
+      "RUN_INSTRUCTIONS",
+      "INDEPENDENT_REPRODUCTION"
+    ],
+    "verification_method": [
+      "Clean-room git clone and pytest run",
+      "Manifest SHA-256 checksum verification",
+      "Cross-plane provenance schema validation"
+    ],
+    "status": "PARTIAL",
+    "evidence_refs": [
+      "EVD-REF-001",
+      "EVD-XPL-001"
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/gate.schema.json",
+  "title": "OSIRISGate",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "name",
+    "description",
+    "prerequisites",
+    "mandatory_terms",
+    "blocking_conditions",
+    "status",
+    "evidence_refs"
+  ],
+  "properties": {
+    "gate_id": {
+      "type": "string",
+      "pattern": "^GATE-[0-9]{3}$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "mandatory_terms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blocking_conditions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["NOT_READY", "BLOCKED", "READY_FOR_REVIEW", "PASSED", "FAILED", "EXPIRED"]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "disposition_note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

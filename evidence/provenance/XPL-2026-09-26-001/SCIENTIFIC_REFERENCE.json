@@ -1,0 +1,17 @@
+{
+  "reference_type": "SCIENTIFIC_PACKAGE_REFERENCE",
+  "package_id": "SEP-QF-2026-001",
+  "evidence_plane": "SCIENTIFIC",
+  "root_hash": "sha256:3a4b9187c29302bf1e89df9012cd4a38721e901842bc0189a87d6e42b1029e01",
+  "grant_proposal": "BlueQubit Quantum Flywheel Open Call 2026",
+  "proposal_doi": "10.5281/zenodo.22863245",
+  "software_release_doi": "10.5281/zenodo.22980008",
+  "claims_status": {
+    "QF-001": "HYPOTHESIS",
+    "QF-002": "SIMULATION_RESULT",
+    "QF-003": "MEASURED",
+    "QF-004": "REPRODUCED",
+    "QF-005": "PROSPECTIVE_QPU_TEST"
+  },
+  "scientific_adjudication": "INDEPENDENT_EVALUATION"
+}

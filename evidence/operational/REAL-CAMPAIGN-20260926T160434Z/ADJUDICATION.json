@@ -1,0 +1,25 @@
+{
+  "campaign_id": "REAL-CAMPAIGN-20260926T160434Z",
+  "evidence_plane": "OPERATIONAL",
+  "evaluated_at_utc": "2026-09-26T16:04:42Z",
+  "adjudication_rules": {
+    "adverse_first_precedence": true,
+    "substitution_permitted": false
+  },
+  "findings": {
+    "total_failures": 3,
+    "failing_criteria": [
+      "SECCOMP_FILTER_ACTIVE",
+      "NETWORK_EGRESS_BLOCKED",
+      "FILESYSTEM_READ_ONLY_ROOT"
+    ]
+  },
+  "gate_outcomes": {
+    "s_deployed": "FALSE",
+    "cloud_deployment_allowed": false,
+    "confirmatory_execution_allowed": false
+  },
+  "verdict": "FAILED_CONFINEMENT_PREDICATE",
+  "root_hash": "sha256:fcb966e6b010c282531a7bc8c962b1154c156f71b9543e09968940e79dc314da",
+  "immutable_preservation_policy": "NEVER_MUTATE_INTO_PASS"
+}

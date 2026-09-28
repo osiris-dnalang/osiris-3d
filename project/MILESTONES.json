@@ -1,0 +1,117 @@
+[
+  {
+    "milestone_id": "MS-001",
+    "title": "Benchmark & Claim Freeze",
+    "description": "Formally declare target quantum advantage claims, freeze benchmark circuit specifications, establish quantitative refutation thresholds, and publish pre-registered protocol manifest.",
+    "target_month": 1,
+    "work_packages": [
+      "WP-001"
+    ],
+    "exit_criteria": [
+      "Target claims formally specified in machine-readable CLAIMS.json",
+      "DNA-Lang parameterized circuit grammar frozen",
+      "Coverage-adjusted entropy metrics mandated for C < 0.1",
+      "Refutation conditions explicitly defined",
+      "Cryptographic protocol digest anchored in SEP package"
+    ],
+    "required_evidence": [
+      "EVD-SCI-001"
+    ],
+    "status": "ACHIEVED"
+  },
+  {
+    "milestone_id": "MS-002",
+    "title": "Classical Adversarial Campaign",
+    "description": "Execute the 4-level classical attack ladder (exact, MPS tensor-networks, Pauli-paths, heuristics) to establish empirical computational boundaries and resource scaling.",
+    "target_month": 2,
+    "work_packages": [
+      "WP-002"
+    ],
+    "exit_criteria": [
+      "Exact reference baseline computed for M <= 24 qubits",
+      "Tensor-network sweep executed across bond dimensions chi in [16, 256]",
+      "Pauli-path hybrid simulation benchmarked against peaked observables",
+      "Heuristic LivLM search executed under budget",
+      "Runtime and memory scaling curves documented in resource ledger"
+    ],
+    "required_evidence": [
+      "EVD-SCI-001"
+    ],
+    "status": "IN_PROGRESS"
+  },
+  {
+    "milestone_id": "MS-003",
+    "title": "Operational Governance & Reproducibility",
+    "description": "Enforce OSIRIS pre-adapter mechanical boundaries, execute confinement probes, freeze operational campaign failure, and bind artifacts via cross-plane provenance without evidence laundering.",
+    "target_month": 1,
+    "work_packages": [
+      "WP-003",
+      "WP-006"
+    ],
+    "exit_criteria": [
+      "65/65 automated governance tests passing green",
+      "Real deployment campaign REAL-CAMPAIGN-20260926T160434Z frozen with S_deployed = FALSE",
+      "Cross-Plane Non-Substitution Invariant enforced via XPL package",
+      "Release designated as Reference Implementation (Not Deployment-Attested)"
+    ],
+    "required_evidence": [
+      "EVD-OPS-001",
+      "EVD-REF-001",
+      "EVD-XPL-001"
+    ],
+    "status": "ACHIEVED"
+  },
+  {
+    "milestone_id": "MS-004",
+    "title": "Quantum Hardware Confrontation",
+    "description": "Dispatch pre-registered circuits to physical QPUs (IBM Heron via BlueQubit API) only upon passing GATE-003, and capture raw measurement bitstrings with backend calibration signatures.",
+    "target_month": 3,
+    "work_packages": [
+      "WP-004"
+    ],
+    "exit_criteria": [
+      "GATE-003 QPU eligibility passed",
+      "Hardware submissions limited strictly to pre-registered circuits",
+      "Raw unmitigated bitstrings and calibration hashes permanently recorded",
+      "Hardware execution treated strictly as execution evidence, not advantage"
+    ],
+    "required_evidence": [],
+    "status": "BLOCKED"
+  },
+  {
+    "milestone_id": "MS-005",
+    "title": "Adversarial Reproduction & Adjudication",
+    "description": "Perform independent clean-room re-execution, alternative estimator analyses, and adverse-first claim adjudication.",
+    "target_month": 3,
+    "work_packages": [
+      "WP-005"
+    ],
+    "exit_criteria": [
+      "Clean-room reproduction executed by independent evaluator",
+      "Alternative coverage-adjusted estimators re-run on raw hardware counts",
+      "Final claim dispositions issued: SUPPORTED, REFUTED, or INCONCLUSIVE"
+    ],
+    "required_evidence": [],
+    "status": "NOT_STARTED"
+  },
+  {
+    "milestone_id": "MS-006",
+    "title": "Open Release & Archival",
+    "description": "Publish complete reproducible code, manifests, research papers, and permanent DOI archival records.",
+    "target_month": 3,
+    "work_packages": [
+      "WP-006"
+    ],
+    "exit_criteria": [
+      "Source repository public with tagged release",
+      "Release manifest and checksums published",
+      "Peer-reviewed research paper authored and preprint published",
+      "Permanent DOI minted via Zenodo"
+    ],
+    "required_evidence": [
+      "DEL-001",
+      "DEL-004"
+    ],
+    "status": "ACHIEVED"
+  }
+]

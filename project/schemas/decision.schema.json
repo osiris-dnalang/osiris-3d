@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/decision.schema.json",
+  "title": "OSIRISDecision",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "date",
+    "decision",
+    "rationale",
+    "authority",
+    "affected_objects",
+    "evidence_refs",
+    "supersedes",
+    "status"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "pattern": "^DEC-[0-9]{3}$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "affected_objects": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "supersedes": {
+      "type": ["string", "null"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ACTIVE", "SUPERSEDED", "REVOKED"]
+    }
+  },
+  "additionalProperties": false
+}

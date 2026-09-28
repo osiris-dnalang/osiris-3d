@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/project_manifest.schema.json",
+  "title": "OSIRISProjectManifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "project_id",
+    "project_name",
+    "program",
+    "manifest_version",
+    "source_commit",
+    "release_anchor",
+    "project_status",
+    "objectives",
+    "evaluation_criteria",
+    "work_packages",
+    "milestones",
+    "gates",
+    "deliverables",
+    "evidence_packages",
+    "risks",
+    "dependencies",
+    "decisions",
+    "external_references",
+    "change_control"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "OSIRIS-PROJECT-MANIFEST-1"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "program": {
+      "type": "string"
+    },
+    "manifest_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_commit": {
+      "type": "string"
+    },
+    "release_anchor": {
+      "type": "string"
+    },
+    "project_status": {
+      "type": "string"
+    },
+    "objectives": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evaluation_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "work_packages": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "milestones": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "gates": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "deliverables": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_packages": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "decisions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "external_references": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "change_control": {
+      "type": "object",
+      "required": ["latest_change_id", "total_changes"],
+      "properties": {
+        "latest_change_id": { "type": "string" },
+        "total_changes": { "type": "integer" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

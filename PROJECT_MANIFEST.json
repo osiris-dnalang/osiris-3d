@@ -1,0 +1,110 @@
+{
+  "schema": "OSIRIS-PROJECT-MANIFEST-1",
+  "project_id": "OSIRIS-LIVLM-TRACK2",
+  "project_name": "OSIRIS / Living Language Model (LivLM) Quantum-Classical Governance Architecture",
+  "program": "BlueQubit Quantum Flywheel Track 2 (Proposal / Prospective Research Package)",
+  "manifest_version": 1,
+  "source_commit": "ba09973",
+  "release_anchor": "v0.1.0-beta.1",
+  "project_status": "ACTIVE_PLANNING_AND_REFERENCE_RELEASE",
+  "objectives": [
+    "OBJ-001",
+    "OBJ-002",
+    "OBJ-003",
+    "OBJ-004",
+    "OBJ-005"
+  ],
+  "evaluation_criteria": [
+    "CRIT-NOV-001",
+    "CRIT-FEA-001",
+    "CRIT-VAL-001",
+    "CRIT-RES-001",
+    "CRIT-REP-001"
+  ],
+  "work_packages": [
+    "WP-001",
+    "WP-002",
+    "WP-003",
+    "WP-004",
+    "WP-005",
+    "WP-006"
+  ],
+  "milestones": [
+    "MS-001",
+    "MS-002",
+    "MS-003",
+    "MS-004",
+    "MS-005",
+    "MS-006"
+  ],
+  "gates": [
+    "GATE-001",
+    "GATE-002",
+    "GATE-003",
+    "GATE-004",
+    "GATE-005"
+  ],
+  "deliverables": [
+    "DEL-001",
+    "DEL-002",
+    "DEL-003",
+    "DEL-004",
+    "DEL-005",
+    "DEL-006"
+  ],
+  "evidence_packages": [
+    "EVD-OPS-001",
+    "EVD-SCI-001",
+    "EVD-XPL-001",
+    "EVD-REF-001"
+  ],
+  "risks": [
+    "RISK-OPS-001",
+    "RISK-SCI-001",
+    "RISK-SCI-002",
+    "RISK-SCI-003",
+    "RISK-REP-001",
+    "RISK-RES-001",
+    "RISK-GOV-001",
+    "RISK-REL-001"
+  ],
+  "dependencies": [
+    "DEP-001",
+    "DEP-002",
+    "DEP-003",
+    "DEP-004"
+  ],
+  "decisions": [
+    "DEC-001",
+    "DEC-002",
+    "DEC-003",
+    "DEC-004",
+    "DEC-005"
+  ],
+  "external_references": [
+    {
+      "type": "GITHUB_REPO",
+      "url": "https://github.com/osiris-dnalang/osiris-governance"
+    },
+    {
+      "type": "ZENODO_RELEASE_CONCEPT",
+      "doi": "10.5281/zenodo.22980007"
+    },
+    {
+      "type": "ZENODO_RELEASE_V1",
+      "doi": "10.5281/zenodo.22980008"
+    },
+    {
+      "type": "ZENODO_RELEASE_V2",
+      "doi": "10.5281/zenodo.22980258"
+    },
+    {
+      "type": "ZENODO_PROPOSAL",
+      "doi": "10.5281/zenodo.22863245"
+    }
+  ],
+  "change_control": {
+    "latest_change_id": "CHG-003",
+    "total_changes": 3
+  }
+}

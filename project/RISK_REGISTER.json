@@ -1,0 +1,98 @@
+[
+  {
+    "risk_id": "RISK-OPS-001",
+    "title": "Unconfined deployment environment",
+    "category": "OPERATIONAL",
+    "owner": "Infrastructure Lead",
+    "status": "OPEN",
+    "probability": "OBSERVED",
+    "impact": "CRITICAL",
+    "mitigation": "Preserve REAL-CAMPAIGN-20260926T160434Z immutably as historical falsifying evidence; trip release gate to S_deployed = FALSE; block Cloud Deployment; require fresh campaign ID for future remediation.",
+    "trigger": "Seccomp mode 0 (filter inactive), unauthorized network egress, or unconfined /tmp writes detected during probe.",
+    "evidence": "EVD-OPS-001"
+  },
+  {
+    "risk_id": "RISK-SCI-001",
+    "title": "Quantum advantage not established",
+    "category": "SCIENTIFIC",
+    "owner": "Scientific Lead",
+    "status": "OPEN",
+    "probability": "HIGH",
+    "impact": "HIGH",
+    "mitigation": "Frame research program strictly around Track 2 adversarial verification (attempting to break advantage claims); treat failure of quantum advantage as a valid, publishable scientific outcome.",
+    "trigger": "Classical simulation matches or exceeds physical QPU performance under pre-registered resource budgets.",
+    "evidence": "EVD-SCI-001"
+  },
+  {
+    "risk_id": "RISK-SCI-002",
+    "title": "Classical simulation may explain claimed effect",
+    "category": "SCIENTIFIC",
+    "owner": "Simulation Lead",
+    "status": "OPEN",
+    "probability": "HIGH",
+    "impact": "HIGH",
+    "mitigation": "Systematically execute 4-level attack ladder (MPS bond dimension sweeps, Pauli-path expansions, heuristic searches) to empirically map the classical boundary before claiming quantum utility.",
+    "trigger": "MPS simulation with bond dimension chi <= 256 achieves state fidelity F >= 0.95 with candidate circuit output.",
+    "evidence": "EVD-SCI-001"
+  },
+  {
+    "risk_id": "RISK-SCI-003",
+    "title": "Estimator and finite-sample artifact",
+    "category": "SCIENTIFIC",
+    "owner": "Methodology Lead",
+    "status": "OPEN",
+    "probability": "MEDIUM",
+    "impact": "CRITICAL",
+    "mitigation": "Forbid naive plug-in Shannon entropy when sample coverage C < 0.1; mandate coverage-adjusted estimators (Miller-Madow, Chao-Shen, NSB) or halt evaluation.",
+    "trigger": "Single-sample singleton frequency f_1 / N approaches 1.0 on large qubit registers (M = 156), creating illusion of entropy suppression.",
+    "evidence": "DEL-004"
+  },
+  {
+    "risk_id": "RISK-REP-001",
+    "title": "Independent reproduction failure",
+    "category": "REPRODUCIBILITY",
+    "owner": "Reproducibility Lead",
+    "status": "OPEN",
+    "probability": "MEDIUM",
+    "impact": "HIGH",
+    "mitigation": "Package complete clean-room reproduction instructions, pinned dependency manifests, container specifications, and automated test runners with 100% test coverage.",
+    "trigger": "Independent clean-room evaluator reports non-zero exit code or divergent metric calculations.",
+    "evidence": "EVD-REF-001"
+  },
+  {
+    "risk_id": "RISK-RES-001",
+    "title": "Classical resource requirements exceed available budget",
+    "category": "RESOURCE",
+    "owner": "Compute Lead",
+    "status": "OPEN",
+    "probability": "MEDIUM",
+    "impact": "MEDIUM",
+    "mitigation": "Implement hard computational caps in classical attack runners; log wall-clock runtime and memory in machine-readable resource ledger; report resource scaling curves.",
+    "trigger": "Classical tensor-network or Pauli-path simulation exceeds 64GB RAM or 24-hour runtime budget.",
+    "evidence": "CRIT-RES-001"
+  },
+  {
+    "risk_id": "RISK-GOV-001",
+    "title": "Evidence-plane substitution and claim laundering",
+    "category": "GOVERNANCE",
+    "owner": "Governance Lead",
+    "status": "OPEN",
+    "probability": "LOW",
+    "impact": "CRITICAL",
+    "mitigation": "Mechanically enforce Evidence Non-Substitution Invariant in DynamicEvidenceLedger and CrossPlaneProvenanceRecord schema; disallow transitive claim promotion.",
+    "trigger": "Attempted authorization of deployment based on scientific pass, or promotion of test pass to physical quantum advantage.",
+    "evidence": "EVD-XPL-001"
+  },
+  {
+    "risk_id": "RISK-REL-001",
+    "title": "Release and documentation drift",
+    "category": "RELEASE",
+    "owner": "Release Engineer",
+    "status": "OPEN",
+    "probability": "LOW",
+    "impact": "HIGH",
+    "mitigation": "Automate project status generation via scripts/project_status.py; enforce referential integrity and hash validation in test suite.",
+    "trigger": "Manually maintained status narrative contradicts machine-readable registers or frozen evidence manifests.",
+    "evidence": "DEL-001"
+  }
+]

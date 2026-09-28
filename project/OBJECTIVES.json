@@ -1,0 +1,77 @@
+[
+  {
+    "objective_id": "OBJ-001",
+    "title": "Adversarial Classical Verification",
+    "description": "Determine whether declared quantum-advantage claims survive progressively stronger classical attacks across a 4-level hierarchy: L0 Exact small-instance reference, L1 Tensor-network/MPS simulation, L2 Pauli-path/Clifford+T methods, and L3 Heuristic/evolutionary search under pre-registered budgets.",
+    "category": "ADVERSARIAL_VERIFICATION",
+    "evaluation_criteria": [
+      "CRIT-NOV-001",
+      "CRIT-VAL-001",
+      "CRIT-RES-001"
+    ],
+    "associated_work_packages": [
+      "WP-001",
+      "WP-002"
+    ],
+    "status": "READY"
+  },
+  {
+    "objective_id": "OBJ-002",
+    "title": "Controlled Hardware Confrontation",
+    "description": "Where justified by the scientific gate, compare the frozen classical baselines against declared quantum-hardware experiments on physical QPUs (IBM Heron via BlueQubit API). Hardware execution is strictly evidence of execution, not automatically evidence of quantum advantage.",
+    "category": "HARDWARE_CONFRONTATION",
+    "evaluation_criteria": [
+      "CRIT-FEA-001",
+      "CRIT-RES-001"
+    ],
+    "associated_work_packages": [
+      "WP-004"
+    ],
+    "status": "BLOCKED"
+  },
+  {
+    "objective_id": "OBJ-003",
+    "title": "Scientific Adjudication",
+    "description": "For every target claim, produce an explicit epistemic disposition: SUPPORTED, REFUTED, INCONCLUSIVE, or NOT_EVALUATED under adverse-first precedence. Never use VERIFIED = TRUE as a universal scientific status.",
+    "category": "SCIENTIFIC_ADJUDICATION",
+    "evaluation_criteria": [
+      "CRIT-VAL-001",
+      "CRIT-REP-001"
+    ],
+    "associated_work_packages": [
+      "WP-005"
+    ],
+    "status": "READY"
+  },
+  {
+    "objective_id": "OBJ-004",
+    "title": "Reproducibility and Audit Integrity",
+    "description": "Make every headline result independently reconstructable from claim, protocol, artifact digest, execution environment, raw data, analysis code, and cross-plane provenance, enabling clean-room independent reproduction.",
+    "category": "REPRODUCIBILITY",
+    "evaluation_criteria": [
+      "CRIT-REP-001",
+      "CRIT-FEA-001"
+    ],
+    "associated_work_packages": [
+      "WP-003",
+      "WP-005",
+      "WP-006"
+    ],
+    "status": "IN_PROGRESS"
+  },
+  {
+    "objective_id": "OBJ-005",
+    "title": "Evidence-Governed AI Orchestration",
+    "description": "Demonstrate that LivLM can propose and orchestrate experiments without becoming the authority that determines scientific truth: AI proposes and orchestrates; deterministic tooling measures; evidence packages preserve; adjudication decides.",
+    "category": "GOVERNED_ORCHESTRATION",
+    "evaluation_criteria": [
+      "CRIT-NOV-001",
+      "CRIT-FEA-001"
+    ],
+    "associated_work_packages": [
+      "WP-001",
+      "WP-003"
+    ],
+    "status": "IN_PROGRESS"
+  }
+]

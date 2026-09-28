@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="osiris_bg">#0B0F19</color>
+    <color name="osiris_surface">#131B2E</color>
+    <color name="osiris_primary">#38BDF8</color>
+</resources>

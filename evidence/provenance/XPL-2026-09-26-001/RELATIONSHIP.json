@@ -1,0 +1,5 @@
+{
+  "relationship_type": "SCIENTIFIC_PACKAGE_REFERENCES_ARTIFACT",
+  "lineage_description": "The scientific package SEP-QF-2026-001 specifies and tests the algorithms implemented within artifact sha256:8df61dc..., which was simultaneously subjected to confinement campaign REAL-CAMPAIGN-20260926T160434Z.",
+  "epistemic_demarcation": "Operational failure S_deployed = FALSE does not falsify mathematical algorithms; algorithmic validity does not authorize deployment."
+}

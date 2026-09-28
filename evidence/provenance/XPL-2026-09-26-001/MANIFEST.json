@@ -1,0 +1,17 @@
+{
+  "record_id": "XPL-2026-09-26-001",
+  "evidence_plane": "PROVENANCE",
+  "provenance_only": true,
+  "title": "Cross-Plane Provenance Linking Operational Deployment to Scientific Research Package",
+  "operational_root": "sha256:fcb966e6b010c282531a7bc8c962b1154c156f71b9543e09968940e79dc314da",
+  "scientific_root": "sha256:3a4b9187c29302bf1e89df9012cd4a38721e901842bc0189a87d6e42b1029e01",
+  "artifact_digest": "sha256:8df61dc619024b170da09fb8b1b268574ea3d4d38e217d83be39209772a6b28b",
+  "git_commit_sha": "8df61dc",
+  "relationship": "SAME_IMMUTABLE_ARTIFACT_LINEAGE",
+  "substitution": {
+    "scientific_for_operational": false,
+    "operational_for_scientific": false
+  },
+  "created_at_utc": "2026-09-26T16:15:00Z",
+  "frozen": true
+}

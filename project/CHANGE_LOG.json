@@ -1,0 +1,40 @@
+[
+  {
+    "change_id": "CHG-001",
+    "timestamp": "2026-09-26T15:00:00Z",
+    "author": "Program Architect & Project Controls Engineer",
+    "reason": "Establish authoritative canonical project-management system with typed JSON registers, strict schemas, and automated status generation.",
+    "diff_summary": "Created project/ directory with schemas, OBJECTIVES.json, EVALUATION_MATRIX.json, WORK_BREAKDOWN_STRUCTURE.json, MILESTONES.json, GATES.json, DELIVERABLES.json, EVIDENCE_REGISTER.json, RISK_REGISTER.json, DECISION_REGISTER.json, DEPENDENCY_REGISTER.json, and PROJECT_MANIFEST.json.",
+    "affected_objects": [
+      "ALL_PROJECT_OBJECTS"
+    ],
+    "approver": "Program Director"
+  },
+  {
+    "change_id": "CHG-002",
+    "timestamp": "2026-09-26T16:15:00Z",
+    "author": "Systems & Governance Lead",
+    "reason": "Freeze real operational deployment campaign REAL-CAMPAIGN-20260926T160434Z and bind cross-plane provenance.",
+    "diff_summary": "Anchored S_deployed = FALSE, root hash sha256:fcb966e6..., created XPL-2026-09-26-001 cross-plane provenance package enforcing non-substitution invariant.",
+    "affected_objects": [
+      "EVD-OPS-001",
+      "EVD-XPL-001",
+      "GATE-003",
+      "GATE-005"
+    ],
+    "approver": "Governance Architecture Council"
+  },
+  {
+    "change_id": "CHG-003",
+    "timestamp": "2026-09-26T16:30:00Z",
+    "author": "Release Engineer",
+    "reason": "Designate v0.1.0-beta.1 as Reference Implementation (Not Deployment-Attested).",
+    "diff_summary": "Updated release manifests, documentation, and Zenodo DOI archival records to honestly reflect local test passage alongside blocked cloud deployment.",
+    "affected_objects": [
+      "DEL-001",
+      "GATE-005",
+      "DEC-003"
+    ],
+    "approver": "Release Engineering Council"
+  }
+]

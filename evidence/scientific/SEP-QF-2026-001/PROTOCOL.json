@@ -1,0 +1,38 @@
+{
+  "package_id": "SEP-QF-2026-001",
+  "evidence_plane": "SCIENTIFIC",
+  "protocol_id": "PROTO-QF-TRACK2-HERON",
+  "title": "Adversarial Classical Reproduction and Hardware Drift Protocol",
+  "target_hardware": {
+    "provider": "IBM_QUANTUM",
+    "architecture": "Heron 156-qubit",
+    "qubit_chain": "8-qubit optimal T1/T2 sub-lattice",
+    "shots_per_point": 10000
+  },
+  "adversarial_ladder": [
+    {
+      "level": 0,
+      "method": "Exact statevector simulation",
+      "boundary": "M <= 24 qubits"
+    },
+    {
+      "level": 1,
+      "method": "Matrix Product State (MPS) tensor network",
+      "boundary": "Bond dimension chi in [16, 256]"
+    },
+    {
+      "level": 2,
+      "method": "Pauli-path / Clifford+T hybrid expansion",
+      "boundary": "T-count <= 64"
+    },
+    {
+      "level": 3,
+      "method": "Heuristic adversarial search",
+      "boundary": "LivLM-generated classical approximation strategies"
+    }
+  ],
+  "falsification_criteria": {
+    "advantage_refuted_if": "Any classical method reproduces hardware XEB fidelity within epsilon=0.02 under matching resource budget",
+    "coverage_rule": "Plug-in entropy estimators on C_hat < 0.1 are formally invalid"
+  }
+}

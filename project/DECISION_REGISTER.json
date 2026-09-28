@@ -1,0 +1,93 @@
+[
+  {
+    "decision_id": "DEC-001",
+    "date": "2026-09-26",
+    "decision": "Separate operational and scientific evidence planes under strict non-substitution invariants.",
+    "rationale": "Prevents evidence laundering: runtime confinement evidence cannot establish scientific validity, and scientific or simulation passes cannot authorize production deployment.",
+    "authority": "Governance Architecture Council",
+    "affected_objects": [
+      "EVD-OPS-001",
+      "EVD-SCI-001",
+      "EVD-XPL-001",
+      "GATE-003",
+      "GATE-005"
+    ],
+    "evidence_refs": [
+      "EVD-XPL-001"
+    ],
+    "supersedes": null,
+    "status": "ACTIVE"
+  },
+  {
+    "decision_id": "DEC-002",
+    "date": "2026-09-26",
+    "decision": "Preserve failed deployment campaign REAL-CAMPAIGN-20260926T160434Z immutably as historical falsifying evidence.",
+    "rationale": "Adverse-first precedence requires that real confinement violations (seccomp mode 0, network egress, unconfined writes) are not concealed or overwritten. Future remediations must receive new campaign IDs.",
+    "authority": "Program Director & System Architect",
+    "affected_objects": [
+      "EVD-OPS-001",
+      "RISK-OPS-001",
+      "GATE-003",
+      "DEL-002"
+    ],
+    "evidence_refs": [
+      "EVD-OPS-001"
+    ],
+    "supersedes": null,
+    "status": "ACTIVE"
+  },
+  {
+    "decision_id": "DEC-003",
+    "date": "2026-09-26",
+    "decision": "Designate release v0.1.0-beta.1 as Reference Implementation (Not Deployment-Attested).",
+    "rationale": "Software passes 65/65 tests (LocalReferenceReleaseAllowed = TRUE), but real operational deployment is failed (S_deployed = FALSE, CloudDeploymentAllowed = FALSE). The release designation must honestly reflect this boundary.",
+    "authority": "Release Engineering Council",
+    "affected_objects": [
+      "DEL-001",
+      "GATE-005",
+      "CRIT-REP-001"
+    ],
+    "evidence_refs": [
+      "EVD-REF-001",
+      "EVD-OPS-001"
+    ],
+    "supersedes": null,
+    "status": "ACTIVE"
+  },
+  {
+    "decision_id": "DEC-004",
+    "date": "2026-09-26",
+    "decision": "Establish adversarial classical verification as the scientific centerpiece of BlueQubit Track 2 proposal.",
+    "rationale": "Rather than asserting premature quantum advantage, the proposal establishes an adversarial system designed to stress-test and break quantum advantage claims using a 4-level classical attack ladder. Breaking an advantage claim is a successful outcome.",
+    "authority": "Scientific Program Lead",
+    "affected_objects": [
+      "OBJ-001",
+      "WP-001",
+      "WP-002",
+      "CRIT-VAL-001"
+    ],
+    "evidence_refs": [
+      "EVD-SCI-001",
+      "DEL-005"
+    ],
+    "supersedes": null,
+    "status": "ACTIVE"
+  },
+  {
+    "decision_id": "DEC-005",
+    "date": "2026-09-26",
+    "decision": "Enforce mandatory QPU Eligibility Gate (GATE-003) prior to physical hardware dispatch.",
+    "rationale": "Hardware resources must not be consumed until classical boundaries (GATE-002) and operational confinement are validated, preventing wasteful or premature QPU executions.",
+    "authority": "Resource Allocation Board",
+    "affected_objects": [
+      "GATE-003",
+      "WP-004",
+      "OBJ-002"
+    ],
+    "evidence_refs": [
+      "EVD-OPS-001"
+    ],
+    "supersedes": null,
+    "status": "ACTIVE"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osiris-governance.dev/schemas/objective.schema.json",
+  "title": "OSIRISObjective",
+  "type": "object",
+  "required": [
+    "objective_id",
+    "title",
+    "description",
+    "category",
+    "evaluation_criteria",
+    "associated_work_packages",
+    "status"
+  ],
+  "properties": {
+    "objective_id": {
+      "type": "string",
+      "pattern": "^OBJ-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ADVERSARIAL_VERIFICATION",
+        "HARDWARE_CONFRONTATION",
+        "SCIENTIFIC_ADJUDICATION",
+        "REPRODUCIBILITY",
+        "GOVERNED_ORCHESTRATION"
+      ]
+    },
+    "evaluation_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "associated_work_packages": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "NOT_STARTED",
+        "READY",
+        "IN_PROGRESS",
+        "BLOCKED",
+        "DONE",
+        "CANCELLED"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

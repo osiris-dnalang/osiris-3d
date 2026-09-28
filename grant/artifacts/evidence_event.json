@@ -1,0 +1,28 @@
+{
+  "event_id": "evt-000004",
+  "event_type": "FIXTURE_REPLAY_COMPLETED",
+  "plane": "REPRODUCIBILITY",
+  "actor": {
+    "id": "replay-actor",
+    "type": "client"
+  },
+  "artifact": {
+    "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scope": {
+    "artifact_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "authority_id": "livlm-control-plane",
+    "environment_digest": "sha256:9999888877776666555544443333222211110000aaaabbbbccccddddeeeeffff",
+    "policy_ref": "livlm-beta-policy@1.0",
+    "time_interval_end": "2026-09-27T00:00:00Z",
+    "time_interval_start": "2026-09-26T00:00:00Z"
+  },
+  "payload": {
+    "fixture_id": "echo-v1",
+    "nonce": "nonce-example-001",
+    "proposal_sha256": "sha256:d82998a4ff8217bbba903c72b25b2a041f05786c234a654c60bc0ae5d3cb86c2"
+  },
+  "previous_record_digest": "sha256:4f8812e9b3a1a9e65899951684c311c1d8ea8f375c3f3a8b4499dca56b46efab",
+  "record_digest": "sha256:e2f470ca8817a22df149453c5f49557b2ffae46a36a992bb1c5879a834eb7891",
+  "recorded_at": "2026-09-26T12:00:02Z"
+}
