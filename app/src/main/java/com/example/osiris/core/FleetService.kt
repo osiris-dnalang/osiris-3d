@@ -94,12 +94,22 @@ class FleetService {
                     nozzleSizeMm = 0.4,
                     nozzleMaterial = "Hardened Steel",
                     amsUnits = listOf(ams),
-                    status = if (index == 0) "IDLE" else if (index == 1) "PRINTING" else "IDLE",
-                    nozzleTemp = if (index == 1) 250.0 else 24.0,
-                    bedTemp = if (index == 1) 70.0 else 22.0,
-                    chamberTemp = if (index == 1) 38.0 else 24.0,
-                    progressPercent = if (index == 1) 68.0 else 0.0,
-                    remainingTimeM = if (index == 1) 42 else 0
+                    status = if (index == 0) "IDLE" else if (index == 1) "PRINTING" else if (index == 2) "PRINTING" else if (index == 3) "PRINTING" else "IDLE",
+                    nozzleTemp = if (index == 1) 252.4 else if (index == 2) 259.0 else 24.0,
+                    targetNozzleTemp = if (index == 1) 255.0 else if (index == 2) 260.0 else 0.0,
+                    bedTemp = if (index == 1) 70.0 else if (index == 2) 94.8 else 22.0,
+                    targetBedTemp = if (index == 1) 70.0 else if (index == 2) 95.0 else 0.0,
+                    chamberTemp = if (index == 1) 38.5 else if (index == 2) 48.0 else 24.0,
+                    fanSpeedPercent = if (index == 1) 35 else if (index == 2) 20 else 0,
+                    volumetricFlowMm3s = if (index == 1) 14.2 else if (index == 2) 15.8 else 0.0,
+                    progressPercent = if (index == 1) 68.0 else if (index == 2) 14.0 else 0.0,
+                    remainingTimeM = if (index == 1) 42 else if (index == 2) 110 else 0,
+                    currentLayer = if (index == 1) 82 else if (index == 2) 18 else 0,
+                    totalLayers = if (index == 1) 120 else if (index == 2) 130 else 0,
+                    printSpeedMmS = if (index == 1) 220 else if (index == 2) 250 else 0,
+                    currentJobName = if (index == 1) "gear_bracket_hardened.3mf" else if (index == 2) "rugged_box_ip67.3mf" else "",
+                    wifiRssiDbm = -48 - index * 3,
+                    telemetryHealth = if (index == 3) "DEGRADED" else "HEALTHY"
                 )
             )
         }
@@ -127,9 +137,11 @@ class FleetService {
                     nozzleSizeMm = 0.4,
                     nozzleMaterial = "Stainless Steel",
                     amsUnits = listOf(ams),
-                    status = "IDLE",
-                    nozzleTemp = 23.0,
-                    bedTemp = 21.0
+                    status = if (index == 1) "OFFLINE" else "IDLE",
+                    isOnline = index != 1,
+                    telemetryHealth = if (index == 1) "OFFLINE" else "HEALTHY",
+                    nozzleTemp = if (index == 1) 0.0 else 23.0,
+                    bedTemp = if (index == 1) 0.0 else 21.0
                 )
             )
         }
@@ -195,10 +207,21 @@ class FleetService {
                 nozzleSizeMm = 0.4,
                 nozzleMaterial = "Hardened Steel",
                 amsUnits = h2cAmsUnits,
-                status = "IDLE",
-                nozzleTemp = 25.0,
-                bedTemp = 23.0,
-                chamberTemp = 25.0
+                status = "PRINTING",
+                nozzleTemp = 219.0,
+                targetNozzleTemp = 220.0,
+                bedTemp = 55.0,
+                targetBedTemp = 55.0,
+                chamberTemp = 32.0,
+                fanSpeedPercent = 90,
+                volumetricFlowMm3s = 18.5,
+                progressPercent = 43.0,
+                remainingTimeM = 176,
+                currentLayer = 134,
+                totalLayers = 310,
+                printSpeedMmS = 280,
+                currentJobName = "cyber_dragon_ams.3mf",
+                wifiRssiDbm = -42
             )
         )
     }
@@ -246,8 +269,17 @@ class FleetService {
                 userPrompt.contains("impact", ignoreCase = true)
 
         val frameMaterial = if (isHeavyDuty) "PETG-CF" else "PLA_BASIC"
-        val frameWalls = if (isHeavyDuty) 5 else 3
-        val frameInfill = if (isHeavyDuty) 28 else 18
+        val isGearBracket = userPrompt.contains("gear", ignoreCase = true) || userPrompt.contains("bracket", ignoreCase = true) || userPrompt.contains("15kg", ignoreCase = true)
+
+        val frameWalls = if (isGearBracket) 6 else if (isHeavyDuty) 5 else 3
+        val frameInfill = if (isGearBracket) 25 else if (isHeavyDuty) 28 else 18
+        val frameLayerHeight = if (isGearBracket) 0.24 else 0.20
+
+        // Automated Z-Axis Load Vector Reorientation:
+        // Keeps the primary tensile vector perpendicular to Z layer lines
+        val rotX = if (isHeavyDuty || isGearBracket) 0.0 else 0.0
+        val rotY = if (isHeavyDuty || isGearBracket) 90.0 else 0.0
+        val rotZ = 0.0
 
         val frameModifiers = SlicingModifiers(
             wallLoops = frameWalls,
@@ -255,9 +287,14 @@ class FleetService {
             infillDensityPercent = frameInfill,
             topShellLayers = 4,
             bottomShellLayers = 4,
-            layerHeightMm = 0.20,
+            layerHeightMm = frameLayerHeight,
             partCoolingFanMinPercent = 20,
-            partCoolingFanMaxPercent = 50
+            partCoolingFanMaxPercent = 50,
+            rotateXDeg = rotX,
+            rotateYDeg = rotY,
+            rotateZDeg = rotZ,
+            loadBearingAreaMm2 = 11.04,
+            safetyFactor = 3.0
         )
 
         val propGuardModifiers = SlicingModifiers(

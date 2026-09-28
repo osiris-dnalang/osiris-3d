@@ -321,6 +321,26 @@ fun DevOpsSlicerScreen(
                                     )
                                 }
 
+                                Spacer(modifier = Modifier.height(4.dp))
+
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    Text(
+                                        "Z-Axis Rotation: (${part.modifiers.rotateXDeg.toInt()}°, ${part.modifiers.rotateYDeg.toInt()}°, ${part.modifiers.rotateZDeg.toInt()}°)",
+                                        color = OsirisViolet,
+                                        fontSize = 9.sp,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                    Text(
+                                        "Load Area: ${part.modifiers.loadBearingAreaMm2}mm² (SF ${part.modifiers.safetyFactor.toInt()}x)",
+                                        color = OsirisEmerald,
+                                        fontSize = 9.sp,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                }
+
                                 Spacer(modifier = Modifier.height(6.dp))
 
                                 Text(

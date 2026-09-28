@@ -52,7 +52,34 @@ data class PrinterNode(
     var progressPercent: Double = 0.0,
     var remainingTimeM: Int = 0,
     var isSelected: Boolean = true,
-    var isOnline: Boolean = true
+    var isOnline: Boolean = true,
+    var targetNozzleTemp: Double = 0.0,
+    var targetBedTemp: Double = 0.0,
+    var fanSpeedPercent: Int = 0,
+    var volumetricFlowMm3s: Double = 0.0,
+    var wifiRssiDbm: Int = -52,
+    var currentLayer: Int = 0,
+    var totalLayers: Int = 0,
+    var printSpeedMmS: Int = 0,
+    var currentJobName: String = "",
+    var telemetryHealth: String = "HEALTHY" // "HEALTHY", "DEGRADED", "OFFLINE"
+)
+
+@Serializable
+data class FilamentScanEnhancement(
+    val modelId: String,
+    val modelTitle: String,
+    val targetPrinterId: String,
+    val targetPrinterName: String,
+    val matchedSpoolsCount: Int,
+    val totalRequiredSpoolsCount: Int,
+    val isReadyToDispatch: Boolean,
+    val purgeSavingsGrams: Double,
+    val purgeSavingsPercent: Double,
+    val adaptiveLayerHeight: String,
+    val colorPrintSequence: List<String>,
+    val flushVolumeMatrixOverrides: Map<String, Double>,
+    val enhancementSummary: String
 )
 
 @Serializable
@@ -64,7 +91,21 @@ data class SlicingModifiers(
     val bottomShellLayers: Int,
     val layerHeightMm: Double,
     val partCoolingFanMinPercent: Int,
-    val partCoolingFanMaxPercent: Int
+    val partCoolingFanMaxPercent: Int,
+    val rotateXDeg: Double = 0.0,
+    val rotateYDeg: Double = 0.0,
+    val rotateZDeg: Double = 0.0,
+    val loadBearingAreaMm2: Double = 11.04,
+    val safetyFactor: Double = 3.0
+)
+
+@Serializable
+data class AmsFallbackMapping(
+    val primarySlot: Int,
+    val fallbackSlot: Int,
+    val matchedMaterial: String,
+    val matchedColorHex: String,
+    val isEepromSynced: Boolean = true
 )
 
 @Serializable

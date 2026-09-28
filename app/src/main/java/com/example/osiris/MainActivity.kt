@@ -19,10 +19,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.DeviceHub
 import androidx.compose.material.icons.filled.Engineering
+import androidx.compose.material.icons.filled.Hub
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.ReceiptLong
 import androidx.compose.material.icons.filled.Security
@@ -58,7 +60,10 @@ import com.example.osiris.ui.OsirisViewModel
 import com.example.osiris.ui.components.StatusPill
 import com.example.osiris.ui.screens.DevOpsSlicerScreen
 import com.example.osiris.ui.screens.FilamentMatrixScreen
+import com.example.osiris.ui.screens.FleetDashboardScreen
 import com.example.osiris.ui.screens.FleetScreen
+import com.example.osiris.ui.screens.FoundryScreen
+import com.example.osiris.ui.screens.GatewayScreen
 import com.example.osiris.ui.screens.LedgerScreen
 import com.example.osiris.ui.screens.PipelineScreen
 import com.example.osiris.ui.theme.OsirisBg
@@ -69,12 +74,14 @@ import com.example.osiris.ui.theme.OsirisRose
 import com.example.osiris.ui.theme.OsirisSurface
 import com.example.osiris.ui.theme.OsirisTextMuted
 import com.example.osiris.ui.theme.OsirisTextPrimary
+import com.example.osiris.ui.theme.OsirisViolet
 
 enum class AppScreen(val title: String, val icon: ImageVector) {
-    FLEET("Fleet & Wi-Fi", Icons.Default.DeviceHub),
-    SLICER("DevOps Slicer", Icons.Default.Build),
+    FOUNDRY("Foundry", Icons.Default.AutoAwesome),
+    FLEET("Fleet", Icons.Default.DeviceHub),
+    GATEWAY("Gateway", Icons.Default.Hub),
+    SLICER("Slicer", Icons.Default.Build),
     PIPELINE("Pipeline", Icons.Default.Engineering),
-    MATRIX("Filament", Icons.Default.Palette),
     LEDGER("Ledger", Icons.Default.ReceiptLong)
 }
 
@@ -89,10 +96,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             OsirisGovernanceTheme {
                 val state by viewModel.uiState.collectAsStateWithLifecycle()
-                var currentScreen by remember { mutableStateOf(AppScreen.FLEET) }
+                var currentScreen by remember { mutableStateOf(AppScreen.FOUNDRY) }
 
-                BackHandler(enabled = currentScreen != AppScreen.FLEET) {
-                    currentScreen = AppScreen.FLEET
+                BackHandler(enabled = currentScreen != AppScreen.FOUNDRY) {
+                    currentScreen = AppScreen.FOUNDRY
                 }
 
                 Scaffold(
@@ -103,14 +110,14 @@ class MainActivity : ComponentActivity() {
                             title = {
                                 Row(verticalAlignment = Alignment.CenterVertically) {
                                     Icon(
-                                        imageVector = Icons.Default.Security,
-                                        contentDescription = "Shield Icon",
-                                        tint = OsirisCyan,
+                                        imageVector = Icons.Default.AutoAwesome,
+                                        contentDescription = "Foundry Icon",
+                                        tint = OsirisViolet,
                                         modifier = Modifier.size(20.dp)
                                     )
                                     Spacer(modifier = Modifier.width(8.dp))
                                     Text(
-                                        text = "OSIRIS DevOps Fleet",
+                                        text = "OSIRIS Foundry",
                                         fontSize = 17.sp,
                                         fontWeight = FontWeight.Bold,
                                         color = OsirisTextPrimary
@@ -119,7 +126,7 @@ class MainActivity : ComponentActivity() {
                             },
                             actions = {
                                 StatusPill(
-                                    text = "9 NODES",
+                                    text = "NCLM ACTIVE",
                                     statusColor = OsirisEmerald,
                                     modifier = Modifier.padding(end = 12.dp)
                                 )
@@ -148,7 +155,7 @@ class MainActivity : ComponentActivity() {
                                     label = {
                                         Text(
                                             text = screen.title,
-                                            fontSize = 9.sp,
+                                            fontSize = 10.sp,
                                             fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal,
                                             maxLines = 1
                                         )
@@ -172,7 +179,39 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
                     ) {
                         when (currentScreen) {
-                            AppScreen.FLEET -> FleetScreen(
+                            AppScreen.FOUNDRY -> FoundryScreen(
+                                models = state.makerWorldModels,
+                                telemetry = state.ingestionTelemetry,
+                                isIngesting = state.isIngesting,
+                                customization = state.selectedCustomization,
+                                p1sDiagnostics = state.p1sDiagnostics,
+                                filamentScanResult = state.filamentScanResult,
+                                onTriggerIngestion = { viewModel.triggerIngestionSweep() },
+                                onSearchModels = { viewModel.searchMakerWorldModels(it) },
+                                onSelectModelForPrint = { model ->
+                                    viewModel.selectModelForPrint(model)
+                                    currentScreen = AppScreen.SLICER
+                                },
+                                onSelectModelForCustomization = { model ->
+                                    viewModel.selectModelForCustomization(model)
+                                },
+                                onUpdateCustomization = { thickness, walls, infill, clearance, mat ->
+                                    viewModel.updateParametricCustomization(thickness, walls, infill, clearance, mat)
+                                },
+                                onAutoFixP1SDiagnostics = {
+                                    viewModel.autoFixP1SDiagnostics()
+                                },
+                                onScanFleetAndOptimize = { model ->
+                                    viewModel.scanFleetAndOptimizeModel(model)
+                                },
+                                onDispatchOptimizedModel = { result ->
+                                    viewModel.dispatchOptimizedModel(result)
+                                },
+                                onDismissScanResult = {
+                                    viewModel.dismissScanResult()
+                                }
+                            )
+                            AppScreen.FLEET -> FleetDashboardScreen(
                                 fleet = state.fleet,
                                 isWifiConnected = state.isWifiConnected,
                                 wifiSsid = state.wifiSsid,
@@ -180,7 +219,22 @@ class MainActivity : ComponentActivity() {
                                 onConnectWifi = { viewModel.connectWifi() },
                                 onScanSubnet = { viewModel.scanSubnet() },
                                 onTogglePrinter = { viewModel.togglePrinter(it) },
-                                onSelectAll = { viewModel.selectAllPrinters(it) }
+                                onSelectAll = { viewModel.selectAllPrinters(it) },
+                                onPausePrinter = { viewModel.pausePrinter(it) },
+                                onStopPrinter = { viewModel.stopPrinter(it) },
+                                onRefreshTelemetry = { viewModel.refreshFleetTelemetry() }
+                            )
+                            AppScreen.GATEWAY -> GatewayScreen(
+                                status = state.gatewayStatus,
+                                cacheEntries = state.cacheEntries,
+                                opticalRecord = state.opticalRecord,
+                                recoveryRecord = state.recoveryRecord,
+                                onToggleGatewayPower = { viewModel.toggleGatewayPower() },
+                                onTestFastApiDispatch = { viewModel.testFastApiDispatch() },
+                                onToggleBrownout = { viewModel.toggleSimulatedBrownout(it) },
+                                onRunOpticalScan = { viewModel.runOpticalScan() },
+                                onInjectSpaghetti = { viewModel.injectSpaghetti() },
+                                onExecuteFailover = { viewModel.executeFailover() }
                             )
                             AppScreen.SLICER -> DevOpsSlicerScreen(
                                 plan = state.activeJobPlan,
@@ -196,9 +250,6 @@ class MainActivity : ComponentActivity() {
                                 terminalLogs = state.terminalLogs,
                                 onConfirmOperatorLoad = { viewModel.confirmOperatorLoad() },
                                 onResetPipeline = { viewModel.resetPipeline() }
-                            )
-                            AppScreen.MATRIX -> FilamentMatrixScreen(
-                                fleetService = viewModel.fleetService
                             )
                             AppScreen.LEDGER -> LedgerScreen(
                                 state = state
